@@ -1,12 +1,14 @@
 /**
- * Created by nabil on 5/2/15.
- */
+- * This is where the game initiated
+  * 
+  * @author Nabil Azam
+  */
 public class StartGame {
 
         /**
-         * 启动游戏
+         * great a new game object
          *
-         * @param args
+         * initiate start of game
          */
         public static void main(String[] args) {
             Game game = new Game();   //Create Game
