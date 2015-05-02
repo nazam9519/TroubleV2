@@ -1,22 +1,27 @@
 import java.util.Scanner;
 
 /**
- * Created by nabil on 5/2/15.
- */
-
-/**
- * @author Nabil Azam
- * Created Game Environment
- */
+- * This is where the player pieces will be set
+- * Display game information to the screen
++ * 
++ * @author Alfred Kenny
++ * @author Nabil Azam
+  * @author Abigail Hughes
+  * @author Wei Zheng
+  */
 public class Game {
+        
+        // declare all variables
         Map map;  //Map
         int playerPos1; //Location of Player 1
         int playerPos2; //Location of Player 2
+        
+        // declare arrays to store information
         String[] goAndStop = new String[2];   //Move or Halt
         String[] playerName = new String[2];  //Game Role
 
         /**
-         * Game initilization
+         * initialize the 
          */
         public void init() {
             map = new Map();
