@@ -44,7 +44,7 @@ public class Game {
 
 
             System.out.println("\n~~~~~~~~~~~~~~~~~~~Two Man Competition~~~~~~~~~~~~~~~~~~~");
-            System.out.println("\nSelect: 1. Fire 2. Eisenhower 3. Phil 4. 巴顿");
+            System.out.println("\nSelect: 1. Fire 2. Eisenhower 3. Phil 4. John");
             Scanner input = new Scanner(System.in);
             System.out.print("Please Select A Role Player 1:  ");
             int role1 = input.nextInt();
@@ -76,7 +76,7 @@ public class Game {
                     playerName[no - 1] = "Phil";
                     break;
                 case 4:
-                    playerName[no - 1] = "巴顿";//Wei Made this...
+                    playerName[no - 1] = "John";
                     break;
                 default:
                     break;
