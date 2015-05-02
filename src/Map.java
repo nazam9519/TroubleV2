@@ -2,6 +2,10 @@
 
 /**
  * Created by nabil on 5/2/15.
+ * Edited by Alfred (apk5175) on 5/2/15
+ *  Game Board 
+ * Stored in a 2D array 
+ * Deals with diffrent aspects of character movement 
  */
 
     public class Map {
@@ -12,13 +16,12 @@
         int[] timeTunnel = {20, 25, 45, 63, 72, 88, 90};   //Time Lapse
 
         /**
-         * Generate A Map:
-         * Level Code:1 Chance 2Mine  3: TimeOut 4Lapse 0Average
+         * The program generates a map
          */
         public void createMap() {
             int i = 0;
 
-            //Set Luck Based Input
+            //Roll of dice 
             for (i = 0; i < luckyTurn.length; i++) {
                 map[luckyTurn[i]] = 1;
             }
@@ -33,7 +36,7 @@
                 map[pause[i]] = 3;
             }
 
-            //Time Lapse
+            //Time lapse
             for (i = 0; i < timeTunnel.length; i++) {
                 map[timeTunnel[i]] = 4;
             }
@@ -42,34 +45,34 @@
         /**
          * Level
          *
-         * @param i          Current Context
-         * @param index      Position Index
-         * @param playerPos1 Player 1 Position
-         * @param playerPos2 Player2
-         * @return
+         * Current Context
+         * Position Index
+         * Player Position 1
+         * Player Position 2
+         * return
          */
         public String getGraph(int i, int index, int playerPos1, int playerPos2) {
             String graph = "";
             if (index == playerPos1 && index == playerPos2) {
                 graph = "@@";
             } else if (index == playerPos1) {
-                //graph = "♀";
+                
                 graph = "Ａ";
             } else if (index == playerPos2) {
-                //graph = "♂";
+               
                 graph = "Ｂ";
             } else {
                 switch (i) {
-                    case 1:   //Luck
+                    case 1:   
                         graph = "¤";
                         break;
-                    case 2:   //Mine
+                    case 2:   
                         graph = "★";
                         break;
-                    case 3:   //Time Out
+                    case 3:   
                         graph = "■";
                         break;
-                    case 4:   //Time Lapse
+                    case 4:   
                         graph = "〓";
                         break;
                     default:
@@ -83,10 +86,10 @@
         /**
          * Output Map Lines
          *
-         * @param start      Output starting position on the board
-         * @param end        The end point
-         * @param playerPos1 Player 1 current position
-         * @param playerPos2 Player 2 current Position
+         *  Output starting position on the board
+         *  The end point
+         *  Player 1 current position
+         *  Player 2 current Position
          */
         public void showLine1(int start, int end, int playerPos1, int playerPos2) {
             for (int i = start; i < end; i++) {
@@ -97,10 +100,10 @@
         /**
          * Player 2
          *
-         * @param start      Starting Position
-         * @param end        The End Point
-         * @param playerPos1 Current Position for Player
-         * @param playerPos2
+         * Starting Position
+         * The End Point
+         * Current Position for Player
+         * Player position 2
          */
         public void showLine2(int start, int end, int playerPos1, int playerPos2) {
             for (int i = end - 1; i >= start; i--) {
@@ -110,11 +113,10 @@
 
         /**
          * Right Vertical Column
-         *
-         * @param start      Output Starting Pos
-         * @param end        End Pos
-         * @param playerPos1
-         * @param playerPos2
+         * Output starting position 
+         * End position
+         * Player position 1
+         * Player position 2
          */
         public void showRLine(int start, int end, int playerPos1, int playerPos2) {
             for (int i = start; i < end; i++) {
@@ -127,12 +129,11 @@
         }
 
         /**
-         *
-         *
-         * @param start
-         * @param end
-         * @param playerPos1
-         * @param playerPos2
+        
+         *  start
+         *  end
+         *  player position 1
+         *  player position 2
          */
         public void showLLine(int start, int end, int playerPos1, int playerPos2) {
             for (int i = start; i < end; i++) {
@@ -142,9 +143,8 @@
 
         /**
          * Display main Board
-         *
-         * @param playerPos1
-         * @param playerPos2
+         *player position 1
+         * player position 2
          */
         public void showMap(int playerPos1, int playerPos2) {
             showLine1(0, 31, playerPos1, playerPos2);   //First Line
